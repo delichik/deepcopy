@@ -10,7 +10,7 @@ func DeepCopy[T any](src, dst *T) {
 	drv := reflect.ValueOf(dst)
 	drv = drv.Elem()
 	addrMap := map[uint64]reflect.Value{}
-	handleStruct(srv, drv, addrMap)
+	handle(srv, drv, addrMap)
 }
 
 func genKey(src reflect.Value) uint64 {
